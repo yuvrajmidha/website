@@ -1,5 +1,3 @@
-import sections from '../pageBuilder/pages/solutions/index'
-
 const services = {
     "logo-design": {
         title: "Logo Design",
