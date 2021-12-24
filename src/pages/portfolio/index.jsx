@@ -28,25 +28,27 @@ function Newsroom(){
     }
     const { tab } = router.query;
     useEffect(() => {switch(tab){
-      case "Updates":
+      case "Design":
         setTabIndex(1);
         break;
-      case "Case Study":
+      case "Branding":
         setTabIndex(2);
         break;
-    }}
-                      , [tab]) 
+      case "Web Development":
+        setTabIndex(3);
+        break;
+    }}, [tab]) 
     
     return (
       <div className="newsroom">
         <Head>
-          <title>Newsroom - BG Unified Solutions</title>
-          <meta name ="description" content = "Get the latest updates from us">
+          <title>Portfolio | Codbrix Labs</title>
+          <meta name ="description" content = "Some hard work from us">
           </meta>
-          <meta property="og:title" content="Newsroom - BG Unified Solutions" key="title" />
+          <meta property="og:title" content="Portfolio - Codbrix Labs" key="title" />
           <meta property="og:description" content="Get the latest updates from us" key ="description"></meta>
         </Head>
-        <Box  zIndex="10" pos="relative" bg="dark.500">
+        {/* <Box  zIndex="10" pos="relative" bg="dark.500">
           <Image position="absolute" height="100%" zIndex="0" top={0} left={0} style={{mixBlendMode:"overlay"}}  opacity="1" objectFit="cover" width="100%" src="/assets/images/backgrounds/tech.jpg"></Image>
             <Fade distance="5%" duration={500} top>
             <Section position="relative" textAlign="center" color="white" py={[24, 32]} my={0}>
@@ -68,12 +70,11 @@ function Newsroom(){
             </Box>
             </Section>
             </Fade>
-          </Box>
-        {/* <Section position="relative" textAlign="center" bg={["gray.200", "#ffffff00"]} py={[16, 24]} my={0}>
+          </Box> */}
+        <Section position="relative" textAlign="center" bg={["gray.200", "#ffffff00"]} py={[16]} my={0}>
             <Image alt="" zIndex="-100" mt="-128px" style={{mixBlendMode:"darken"}} minH="448px" width="100%" objectFit="cover" left={0} position="absolute" top={0} src="/assets/images/backgrounds/dots_circle.jpg"></Image>
-            <Heading zIndex="100" size="xs" letterSpacing={1.8} textAlign="center" color="primary.500" mb={4} textTransform="uppercase">News from us</Heading>
-            <Title zIndex="100" fontSize={["44px","64px"]}>Our Newsroom</Title>
-            <Text zIndex="100" fontSize="xl" mt={2}>Get the latest updates from us.</Text>
+            <Heading zIndex="100" size="xs" letterSpacing={1.8} textAlign="center" color="primary.500" mb={4} textTransform="uppercase">Our Hard Work {"&"} Creativity</Heading>
+            <Title zIndex="100" fontSize={["44px","64px"]}>Portfolio <span className="text-gradient">.</span></Title>
             <Box display={["none", "block"]}pos="relative">
               <InputGroup mx="auto" mt={8} width={["100%","100%","520px"]}>
                 <InputLeftElement m="6px"><FaSearch size="14px" color="dark.500"/></InputLeftElement>
@@ -87,10 +88,10 @@ function Newsroom(){
                   </Box>
               </Flex>}
             </Box>
-        </Section> */}
+        </Section>
         {/* CardWithImage have weird width, bad component, pls fix */}
 
-        <Section pt={0}>
+        <Section pt={0} mt={0} >
               {/* <Flex mx={3} height="80px" justify="center">
                 {["All", "Updates", "Case Study"].map(text => <Button 
                 color="white"
@@ -106,7 +107,7 @@ function Newsroom(){
               <Fade duration={100} distance="5%" bottom>
               <Tabs index={tabIndex} onChange={setTabIndex} align="center">
                 <TabList mb={8} borderBottomWidth={0}>
-                  {["All", "Updates", "Case Studies"].map(text => <Tab p={5} _selected={{ color: "primary.500", fontWeight:"600", borderBottomColor:"primary.500"}} >{text}</Tab>)}
+                  {["All", "Design", "Branding", "Web Development"].map(text => <Tab p={5} _selected={{ color: "primary.500", fontWeight:"600", borderBottomColor:"primary.500"}} >{text}</Tab>)}
                 </TabList>
                 <TabPanels>
                   <TabPanel>
@@ -139,7 +140,7 @@ function Newsroom(){
                         </Fade>
                       
                   </TabPanel>
-                  {["Updates", "Case Study"].map(text => <TabPanel>
+                  {["Design", "Branding", "Web Development"].map(text => <TabPanel>
                   <Fade duration={300} cascade distance="5%" bottom>
                       <Flex wrap="wrap">
                     {newsroom.map(blog =>{if(blog.category === text) {

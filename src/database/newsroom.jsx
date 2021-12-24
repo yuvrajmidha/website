@@ -4,7 +4,7 @@ const articles = [
     {
         index: 1,
         type: "Blog",
-        category: "UX Design",
+        category: "Design",
         title: "Simple Easy and Quick, Don't Make Me Think",
         date: "October 2020",
         by: "Yuvraj Midha",

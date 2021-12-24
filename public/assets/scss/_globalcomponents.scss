@@ -20,9 +20,13 @@ p{
 .link{
     font-weight: 700;
     color: $color-dark;
+    cursor: pointer !important;
     text-decoration: none !important;
 }
 .link:hover{
+    .text{
+        color: $color-primary !important;
+    }
     color: $color-primary !important;
 }
 a.no-red{

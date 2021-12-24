@@ -1,6 +1,5 @@
 import React from 'react';
 import WhatsNew from './whatsnew'
-import Search from './search'
 import Menu from './menu'
 import {
     Image,
@@ -16,7 +15,6 @@ import {
     PopoverContent,
     Stack, Link, Heading, Grid, Divider, useDisclosure, Tabs, TabList, TabPanels, Tab, TabPanel
 } from '@chakra-ui/react'
-import services from "../../database/services"
 import { FaInfoCircle, FaNewspaper, FaCommentAlt, FaBriefcase, FaSearch } from "react-icons/fa"
 import { IoIosCall } from "react-icons/io"
 import newsroom from "../../database/newsroom"
@@ -39,7 +37,6 @@ function header(props) {
     const overlayClick = () => {
         setShow(0);
     }
-    const servicesArray = Object.entries(services)
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [isOpen2, setIsOpen2] = React.useState(false);
     const onOpen2 = () => setIsOpen2(true);
@@ -176,39 +173,39 @@ function header(props) {
                             <Link className="header-link" display={["none", "none", "none", "flex"]} color="gray.700" fontFamily="Sora" fontWeight="800" fontSize="md" _hover={{ color: "primary.500", textDecoration: "none" }}>Services</Link>
                                 <Box className="header-dropdown">
 
-                                <Container  maxW="800px">
+                                <Container  maxW="480px">
                                     <Fade duration={300} distance="5%" top>
-                                        <Box rounded={4}  borderWidth={1} borderColor="gray.300" bg="gray.50" overflow="hidden">
+                                        <Box rounded={4}  shadow="lg" bg="gray.50" overflow="hidden">
 
                                             <Row>
-                                                <Box p={12} w="50%">
+                                                <Box p={12} w="100%">
                                                     <Grid templateColumns="auto" templateRows="72px" wrap="wrap">
                                                         <Box className="design" height="48px" py={4}>
-                                                            <a className="link"><Flex align="center">
+                                                            <Hyperlink href="/uiux-design" ><Flex className="link" align="center">
                                                                 <Box rounded="8" bg="gray.100" padding={2}><SVG size={6} color="yellow.400" src="/assets/images/icons/library/layout/layout-right-panel-1.svg"></SVG></Box>
                                                                 <Box onClick={onClose} ml="3">
-                                                                    <Heading size="sm" >UI/UX Design</Heading>
+                                                                    <Heading className="text" size="sm" >UI/UX Design</Heading>
                                                                     <Text fontSize="sm" fontWeight="500" opacity=".7">For a User Specific App</Text>
                                                                 </Box>
-                                                            </Flex></a>
+                                                            </Flex></Hyperlink>
                                                         </Box>
-                                                        <Box className="branding" height="48px" py={4}>
-                                                            <a className="link"><Flex align="center">
+                                                        <Box className="branding" className="link"  height="48px" py={4}>
+                                                            <Hyperlink href="/branding" ><Flex align="center">
                                                                 <Box rounded="8" bg="gray.100" padding={2}><SVG size={6} color="purple.400" src="/assets/images/icons/library/design/brush.svg"></SVG></Box>
                                                                 <Box onClick={onClose} ml="3">
-                                                                    <Heading size="sm" >Branding</Heading>
+                                                                    <Heading className="text" size="sm" >Branding</Heading>
                                                                     <Text fontSize="sm" fontWeight="500" opacity=".7">That Defines You!</Text>
                                                                 </Box>
-                                                            </Flex></a>
+                                                            </Flex></Hyperlink>
                                                         </Box>
                                                         <Box className="development" height="48px" py={10}>
-                                                            <a className="link"><Flex align="center">
+                                                            <Hyperlink href="/web-dev" ><Flex className="link" align="center">
                                                                 <Box rounded="8" bg="gray.100" padding={2}><SVG size={6} color="green.500" src="/assets/images/icons/monotone/webdev.svg"></SVG></Box>
                                                                 <Box onClick={onClose} ml="3">
-                                                                    <Heading size="sm" >Development</Heading>
+                                                                    <Heading className="text" size="sm" >Development</Heading>
                                                                     <Text fontSize="sm" fontWeight="500" opacity=".7">Ready. Steady. Code.</Text>
                                                                 </Box>
-                                                            </Flex></a>
+                                                            </Flex></Hyperlink>
                                                         </Box>
                                                         {/* <Box height="48px" my={4}>
                                                             <a className="link"><Flex align="center">
@@ -222,37 +219,16 @@ function header(props) {
                                                         
                                                     </Grid>
                                                    </Box>
-                                                <Flex className="design-items" flexDirection="column" width="50%" p={12} borderLeftWidth={1} borderLeftColor="gray.300">
-                                                  {Object.entries(services).filter(item => item[1].category === "UI/UX Design").map((item, index)=> <Box  key={index} py={3}>
-                                                  <Hyperlink key={index} href={'/' + item[0]}>
-                                                    <Link className="header-link" display={["none", "none", "none", "flex"]} fontWeight="500" fontSize="md" color="primary" _hover={{ color: "#ff0000", textDecoration: "none" }}>{item[1].title}</Link>
-                                                   </Hyperlink>
-                                                  </Box>)}
-                                                </Flex>
-                                                <Flex className="branding-items" display="none" flexDirection="column" width="50%" p={12} bg="light.400">
-                                                  {Object.entries(services).filter(item => item[1].category === "Branding").map((item, index)=> <Box key={index} py={3}>
-                                                  <Hyperlink key={index} href={'/' + item[0]}>
-                                                    <Link className="header-link" display={["none", "none", "none", "flex"]} fontWeight="500" fontSize="md" color="primary" _hover={{ color: "#ff0000", textDecoration: "none" }}>{item[1].title}</Link>
-                                                   </Hyperlink>
-                                                  </Box>)}
-                                                </Flex>
-                                                <Flex className="design-items" display="none" flexDirection="column" width="50%" p={12} bg="light.400">
-                                                  {Object.entries(services).filter(item => item[1].category === "Development").map((item, index)=> <Box key={index}  py={3}>
-                                                  <Hyperlink key={index} href={'/' + item[0]}>
-                                                    <Link className="header-link" display={["none", "none", "none", "flex"]} fontWeight="500" fontSize="md" color="primary" _hover={{ color: "#ff0000", textDecoration: "none" }}>{item[1].title}</Link>
-                                                   </Hyperlink>
-                                                  </Box>)}
-                                                </Flex>
                                             </Row>
                                         </Box>
                                     </Fade>
                                 </Container>
                                 </Box>                                      
                             </Box>
-                            <Hyperlink href="/features">
+                            <Hyperlink href="/portfolio">
                                 <Link display={["none", "none", "none", "flex"]} color="gray.700" fontFamily="Sora" fontWeight="800" fontSize="md" _hover={{ color: "primary.500", textDecoration: "none" }}>Portfolio</Link>
                             </Hyperlink>
-                            <Hyperlink href="/features">
+                            <Hyperlink href="/blogs">
                                 <Link display={["none", "none", "none", "flex"]} color="gray.700" fontFamily="Sora" fontWeight="800" fontSize="md" _hover={{ color: "primary.500", textDecoration: "none" }}>Blog</Link>
                             </Hyperlink>
                             {/* <Search toggle ={() => setSearch(!search)} searching={search}></Search> */}

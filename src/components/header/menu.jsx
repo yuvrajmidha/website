@@ -1,6 +1,5 @@
 import React from "react";
 import { IoIosMenu } from "react-icons/io";
-import Services from "../Services/services";
 import Link from "next/link";
 import {
   Button,
@@ -48,7 +47,6 @@ function menu(props) {
               </div>
             </Button>
             <Collapse px="16px" mb={4} isOpen={services}>
-              <Services></Services>
             </Collapse>
             <Button
               className="btn-block btn my-2"

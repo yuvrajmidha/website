@@ -3,12 +3,10 @@ import Head from "next/head";
 import {Box, Input, InputGroup, Text, Heading, InputLeftElement, Icon} from "@chakra-ui/react"
 import Fade from "react-reveal/Fade";
 import {dynamicSearch} from "../../public/assets/js/searchFunctions"
-import services from "../database/services";
 import Link from "next/link";
 import {useRouter} from "next/router";
 import { SearchIcon } from '@chakra-ui/icons'
 
-const servicesArray = Object.entries(services);
 
 function search(props) {
     const router = useRouter();
@@ -20,7 +18,6 @@ function search(props) {
     }
     const [data, setData] = React.useState({
         pages: [],
-        services: [],
         articles: []
     })
 
@@ -33,7 +30,7 @@ function search(props) {
     return (
       <div className="newsroom">
         <Head>
-          <title>Search | BG Unified Solutions</title>
+          <title>Search | Codbrix Labs</title>
         </Head>
         <Fade duration={500} distance="10%"  top>
          <Box mt={30} mb={2} pb="10px" pt={["30px","50px","72px"]}>
@@ -55,32 +52,7 @@ function search(props) {
                <Fade duration={400} delay={300} top>
                     {text === "" && <Heading size="sm" mt={6} zIndex={100} className="text-primary" textTransform="uppercase" mb={2}>Most Popular</Heading>}
                 </Fade>
-                {text === "" && servicesArray.map(service => {
-                    if(service[1].popular === true) return (
-                        <Fade duration={300} distance="4%" delay={300} left>
-                            <Box mt={3} p={8} className="rounded-8 border">
-                                <Heading size="lg" mb={2}>{service[1].title}</Heading>
-                                <Text fontSize="md" className="truncate-ellipsis">
-                                {service[1].description}
-                                </Text>
-                                <Link href="/solutions/[name]" as={`/solutions/${service[0]}`}><a onClick={props.toggle} className="link text-secondary">Learn More</a></Link>
-                            </Box>
-                        </Fade>
-                    )
-                })}
                 {text != "" && <div>
-                {data.services.length > 0 && <Heading size="sm" mt={6} className="text-primary" textTransform="uppercase" mb={2}>Services</Heading>}
-                {data.services && data.services.map((service, index) => (
-                    <Fade duration={200} key={index} distance="4%" left>
-                    <Box mt={3} p={8} className="rounded-8 border">
-                        <Heading size="lg" mb={2}>{service[1].title}</Heading>
-                        <Text fontSize="md" className="truncate-ellipsis">
-                            {service[1].description}
-                        </Text>
-                        <Link href="/solutions/[name]" as={`/solutions/${service[0]}`}><a onClick={props.toggle} className="link text-secondary">Learn More</a></Link>
-                    </Box>
-                    </Fade>
-                ))}
                 {data.articles.length > 0 && <Heading size="sm" mt={6} className="text-primary" textTransform="uppercase" mb={2}>Articles</Heading>}
                 {data.articles.length > 0 && data.articles.map(blog => ( 
                 <Box mt={3}>
@@ -91,7 +63,7 @@ function search(props) {
                     <Link href="/newsroom/[bid]" as={"/newsroom/" + blog.link}><a onClick={props.toggle} className="link text-secondary">Read More</a></Link>
                 </Box>
                 ))}
-                {(data.articles.length === 0 && data.services.length === 0 && text != "") && 
+                {(data.articles.length === 0 && text != "") && 
                 <div className="w-100 d-flex justify-content-center">
                     <Heading mt={3} opacity={.5}>No Result Found</Heading>
                 </div>}
