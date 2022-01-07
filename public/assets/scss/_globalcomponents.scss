@@ -196,11 +196,11 @@ button{
 
 .hover-effect:hover{
     cursor: pointer;
-    background: hsl($primary-h, 0, 96) !important
+    background: hsl($primary-h, 0%, 96%) !important
 }
 
 .shadow-md{
-   box-shadow: 0 .5rem 1rem hsla(0, 90, 30, 0.140) !important;
+   box-shadow: 0 .5rem 1rem hsla(0, 90%, 30%, 0.140%) !important;
 
 }
 

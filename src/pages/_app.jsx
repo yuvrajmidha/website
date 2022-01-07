@@ -6,11 +6,8 @@ import customTheme from "../../public/assets/js/theme";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "flickity/dist/flickity.min.css";
 
-import 'swiper/swiper.scss';
-import 'swiper/components/effect-fade/effect-fade.scss';
-import 'swiper/components/navigation/navigation.scss';
-
 import "../../public/assets/scss/styles.scss";
+import "../../public/assets/scss/styles.css"; 
 import App from "next/app";
 import Head from "next/head";
 import Router from "next/router";
