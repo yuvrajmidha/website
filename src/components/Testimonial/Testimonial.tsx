@@ -1,62 +1,65 @@
-import { Box, Flex, HStack, Img, Stack,Heading, Text, useColorModeValue as mode } from '@chakra-ui/react'
+import {
+  Box,
+  BoxProps,
+  Center,
+  chakra,
+  Flex,
+  HStack,
+  Img,
+  Text,
+  useColorModeValue,
+} from '@chakra-ui/react'
 import * as React from 'react'
 import { ImQuotesLeft } from 'react-icons/im'
 
-interface TestimonialProps {
+interface TestimonialProps extends BoxProps {
   image: string
   name: string
   role: string
-  children: React.ReactNode
+  accentColor: string
 }
-
 export const Testimonial = (props: TestimonialProps) => {
-  const { image, name, role, children } = props
+  const { image, name, role, children, accentColor } = props
   return (
-    <Stack as="blockquote" direction="row" spacing={{ base: '0', md: '8' }} flex="1" {...props}>
-      <Img
-        display={{ base: 'none', md: 'block' }}
-        mt="2"
-        flexShrink={0}
-        src={image}
-        alt={name}
-        objectFit="cover"
-        w={{ base: '20', md: '32' }}
-        h={{ base: '20', md: '32' }}
-        rounded="full"
-      />
-      <Flex w="full" direction="column">
-        <Box mb="6" ml="9px">
-          <Box as={ImQuotesLeft} color={mode('blue.600', 'blue.400')} fontSize="xl" />
-          <Heading lineHeight={1.3} mt="3" mx={0} size="sm" fontWeight="bold" maxW="38rem">
-            {children}
-          </Heading>
+    <Flex direction="column">
+      <Box
+        flex="1"
+        rounded="lg"
+        bg={useColorModeValue('white', 'gray.700')}
+        shadow="base"
+        px="10"
+        pt="8"
+        pb="12"
+        pos="relative"
+        mb="10"
+      >
+        <Box as={ImQuotesLeft} color={accentColor} fontSize="3xl" />
+        <Text mt="5" fontSize="lg" fontWeight="bold">
+          {children}
+        </Text>
+        <chakra.svg
+          pos="absolute"
+          bottom="-7"
+          insetStart="3.5rem"
+          w="10"
+          viewBox="0 0 38 28"
+          color={useColorModeValue('white', 'gray.700')}
+          style={{
+            filter: 'drop-shadow(0px 1px 1px rgba(0, 0, 0, .1)',
+          }}
+        >
+          <path d="M0 28V0H38L0 28Z" fill="currentColor" />
+        </chakra.svg>
+      </Box>
+      <HStack spacing="4">
+        <Center rounded="full" w="4rem" h="4rem" p="1" border="3px solid" borderColor={accentColor}>
+          <Img w="100%" h="100%" rounded="full" objectFit="cover" src={image} />
+        </Center>
+        <Box>
+          <Text fontWeight="bold">{name}</Text>
+          <Text fontSize="sm">{role}</Text>
         </Box>
-        <HStack>
-          <Img
-            display={{ base: 'block', md: 'none' }}
-            flexShrink={0}
-            src={image}
-            alt={name}
-            objectFit="cover"
-            w={{ base: '12', md: '32' }}
-            h={{ base: '12', md: '32' }}
-            rounded="full"
-          />
-          <Box>
-            <Text
-              as="cite"
-              fontStyle="normal"
-              fontWeight="extrabold"
-              color={mode('blue.600', 'blue.400')}
-            >
-              {name}
-            </Text>
-            <Text fontSize="sm" color={mode('gray.600', 'gray.400')}>
-              {role}
-            </Text>
-          </Box>
-        </HStack>
-      </Flex>
-    </Stack>
+      </HStack>
+    </Flex>
   )
 }

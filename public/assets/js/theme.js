@@ -1,9 +1,18 @@
 import { extendTheme } from "@chakra-ui/react";
+
+const config = {
+    initialColorMode: 'dark',
+    useSystemColorMode: false,
+  }
+  
 const theme = extendTheme({
+    config,
     colors: {
         transparent: "transparent",
-        primary: {
-            500: "#4E19B9"
+        brand: {
+            600: "#4E19B9",
+            500: "#4E19B9",
+            400: "#4E19B9"
         },
         secondary: {
             500: "#EFB617"

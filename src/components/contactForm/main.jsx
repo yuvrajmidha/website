@@ -71,13 +71,16 @@ function ContactForm(props) {
       .then((response) => refreshForm(response), (error) => refreshForm(error))
   }
   return (
-    <Box p={5}>
+    <Box>
       <form onSubmit={onSubmit}>
         <input type="hidden" name="_redirect" value="false" />
-        <Flex wrap="wrap">
+        <Flex mx="-8px" wrap="wrap">
           <FormControl px={2} width={"100%"} isRequired>
             <Input
               placeholder="Name"
+              
+              borderColor={"gray.400"}
+              _placeholder={{color: "gray.400"}}
               type="text"
               p={6}
               name="name"
@@ -91,6 +94,9 @@ function ContactForm(props) {
               p={6}
               placeholder="Email"
               type="email"
+              
+              borderColor={"gray.400"}
+              _placeholder={{color: "gray.400"}}
               name="email"
               value={email}
               onChange={onChange}
@@ -102,6 +108,9 @@ function ContactForm(props) {
               p={6}
               placeholder="Phone Number"
               type="tel"
+              
+              borderColor={"gray.400"}
+              _placeholder={{color: "gray.400"}}
               pattern="[0-9]{10}"
               name="phone"
               value={phone}
@@ -114,6 +123,9 @@ function ContactForm(props) {
               p={6}
               placeholder="Subject"
               name="subject"
+              
+              borderColor={"gray.400"}
+              _placeholder={{color: "gray.400"}}
               value={subject}
               onChange={onChange}
             />
@@ -125,27 +137,31 @@ function ContactForm(props) {
               height="220px"
               size="lg"
               name="message"
+              
+              borderColor={"gray.400"}
+              _placeholder={{color: "gray.400"}}
               value={message}
               onChange={onChange}
               resize={"vertical"}
             />
           </FormControl>
-
-          <Button
-            mt={10}
-            type="submit"
-            size="lg"
-            colorScheme="primary"
-            className="primary-btn"
-            width="100%"
-          >Submit{isLoading && <Spinner
-            thickness="4px"
-            speed="1s"
-            emptyColor="gray.200"
-            color="blue.500"
-            size="sm"
-          />}
-          </Button>
+          <FormControl px={2} mt={4} display="flex" justifyContent={"end"} width={"100%"}>
+            <Button
+              type="submit"
+              variant='outline'
+              size="lg"
+              py={6}
+              ml="auto"
+              colorScheme="brand"
+            >Submit{isLoading && <Spinner
+              thickness="4px"
+              speed="1s"
+              emptyColor="gray.200"
+              color="blue.500"
+              size="sm"
+            />}
+            </Button>
+          </FormControl>
         </Flex>
       </form>
       {formResponse && <Toast response={formResponse} />}

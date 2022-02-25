@@ -5,19 +5,19 @@ import { FooterHeading } from './FooterHeading'
 export const LinkGrid = (props: SimpleGridProps) => (
   <SimpleGrid columns={2} {...props}>
     <Box minW="130px">
-      <FooterHeading mb="4">Product</FooterHeading>
+      <FooterHeading mb="4">Company</FooterHeading>
       <Stack>
-        <Link>How it works</Link>
-        <Link>Pricing</Link>
-        <Link>Use Cases</Link>
+        <Link>Our Portfolio</Link>
+        <Link>Blogs</Link>
+        <Link>Contact Us</Link>
       </Stack>
     </Box>
     <Box minW="130px">
-      <FooterHeading mb="4">Legal</FooterHeading>
+      <FooterHeading mb="4">Services</FooterHeading>
       <Stack>
-        <Link>Privacy</Link>
-        <Link>Terms</Link>
-        <Link>License</Link>
+        <Link>UI/UX Design</Link>
+        <Link>Branding</Link>
+        <Link>Development</Link>
       </Stack>
     </Box>
   </SimpleGrid>

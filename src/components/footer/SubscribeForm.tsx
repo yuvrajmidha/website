@@ -15,7 +15,7 @@ export const SubscribeForm = (props: HTMLChakraProps<'form'>) => {
     <chakra.form {...props} onSubmit={(e) => e.preventDefault()}>
       <Stack spacing="4">
         <FooterHeading>Subscribe to our newsletter</FooterHeading>
-        <Text>Get notified when we add new components or we have exciting news for you.</Text>
+        <Text>Get notified when we add new blog or we have exciting news for you.</Text>
         <Stack spacing="4" direction={{ base: 'column', md: 'row' }}>
           <Input
             bg={useColorModeValue('white', 'inherit')}
@@ -30,7 +30,7 @@ export const SubscribeForm = (props: HTMLChakraProps<'form'>) => {
           />
           <Button
             type="submit"
-            colorScheme="blue"
+            colorScheme="brand"
             flexShrink={0}
             width={{ base: 'full', md: 'auto' }}
           >

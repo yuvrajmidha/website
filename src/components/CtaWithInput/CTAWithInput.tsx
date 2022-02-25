@@ -1,26 +1,26 @@
-import { Box, Heading, Stack, Text } from '@chakra-ui/react'
+import { Box, Button, Heading, Stack, Text } from '@chakra-ui/react'
 import * as React from 'react'
 import { Feature } from './Feature'
 import { InvitationForm } from './InvitationForm'
 
-export const CTAWithInput = () => (
-  <Box as="section" py={{ lg: '12' }}>
+const CTAWithInput = () => (
     <Box
-      bg="blue.600"
+      bg="gray.200"
       rounded={{ lg: '2xl' }}
-      maxW="5xl"
       mx="auto"
       px={{ base: '4', sm: '6', lg: '8' }}
       py={{ base: '12', sm: '16' }}
     >
-      <Box maxW="xl" mx="auto" color="white" textAlign="center">
-        <Text mb="4" fontSize="lg" color="whiteAlpha.800" fontWeight="semibold">
+      <Box maxW="xl" mx="auto" textAlign="center">
+        <Text mb="4" fontSize="lg" fontWeight="semibold">
           Grow your engineering team
         </Text>
         <Heading as="h2" mb="8" size="xl" fontWeight="extrabold" letterSpacing="tight">
           Start recruiting like the best and find perfect candidates in no time.
         </Heading>
-        <InvitationForm />
+        <Button size="lg" colorScheme="brand" fontSize="md" px="10">
+            Get Invite
+        </Button>
         <Stack
           spacing={{ base: '3', md: '6' }}
           direction={{ base: 'column', md: 'row' }}
@@ -33,5 +33,6 @@ export const CTAWithInput = () => (
         </Stack>
       </Box>
     </Box>
-  </Box>
 )
+
+export default CTAWithInput;

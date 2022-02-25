@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import Head from "next/head";
-import { Image, Button,Stack, BoxProps,SimpleGrid, Heading, Box, Flex, Icon, Text, ButtonGroup, chakra, useColorModeValue as mode } from "@chakra-ui/react";
+import { Image, Button,Stack, BoxProps,SimpleGrid, Heading, Box, Flex, Icon, Text, ButtonGroup, chakra, useColorModeValue as mode, Divider } from "@chakra-ui/react";
 import SVG from "../components/svg/SVG";
 import {FeaturedWork} from '../components/PortfolioFeatured/FeaturedWork.tsx'
 import { PortfolioIndex } from '../components/PortfolioIndex/PortfolioIndex';
 import { TestimonialsIndex } from '../components/Testimonial/TestimonialsIndex';
+import CTAWithInput from '../components/CtaWithInput/CTAWithInput';
+import Section from "../pageBuilder/Section";
 
 const Feature = (props) => {
   const { title, children, icon, border } = props
@@ -83,7 +85,7 @@ const FeatureImage = (props) => (
            <Button
               mt="8"
               minW="14rem"
-              colorScheme="primary"
+              colorScheme="brand"
               size="lg"
               height="14"
               px="8"
@@ -128,8 +130,8 @@ const FeatureImage = (props) => (
         </Flex>
     </Box>
          
-    <Box as="section"  py="0" >
-      <Box maxW={{ base: 'xl', md: '7xl' }} mx="auto" px={{ base: '6', md: '8' }}>
+    <Section  py="0" >
+      <Box px={{ base: '6', md: '8' }}>
           
             <Flex width="100%" justify="space-between" align="end">
               <Box mb={{ lg: '3rem', base: "1rem" }}>
@@ -168,8 +170,11 @@ const FeatureImage = (props) => (
               </Feature>
             </SimpleGrid>
       </Box>
+    </Section>
+    <Section  py="24" bg="gray.100">
+    <Box px={4}>
+      <Divider mb={2} borderBottomColor={"dark.500"}></Divider>
     </Box>
-    <Box  as="section"  py="24" bg="gray.100">
       <FeaturedWork
         color="teal"
         category="Web Dev"
@@ -205,8 +210,8 @@ const FeatureImage = (props) => (
       type="vertical"
     ></FeaturedWork>
       </SimpleGrid>
-    </Box>
-    <Box as="section"  py="4" bg="gray.100">
+    </Section>
+    <Section  py="4" bg="gray.100">
       <Flex width="100%" justify="center" align="end">
               <Box mb={{ lg: '3rem', base: "1rem" }}>
                 <Heading
@@ -224,7 +229,10 @@ const FeatureImage = (props) => (
               </Box>
             </Flex>
       <TestimonialsIndex></TestimonialsIndex>
-    </Box>
+    </Section>
+    <Section py={4} my={0}>
+      <CTAWithInput/>
+    </Section>
       </div>
     );
   }

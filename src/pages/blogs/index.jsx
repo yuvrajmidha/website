@@ -11,6 +11,7 @@ import {dynamicSearch} from "../../../public/assets/js/searchFunctions"
 import { Divider } from "@chakra-ui/react";
 import { useRouter } from 'next/router'
 import { FaSearch } from "react-icons/fa";
+import { BsSearch } from "react-icons/bs";
 
 function Newsroom(){
   const router = useRouter()
@@ -70,22 +71,24 @@ function Newsroom(){
             </Section>
             </Fade>
           </Box> */}
-        <Section position="relative" textAlign="center" bg={["gray.200", "#ffffff00"]} py={[16]} my={0}>
-            <Image alt="" zIndex="-100" mt="-128px" style={{mixBlendMode:"darken"}} minH="448px" width="100%" objectFit="cover" left={0} position="absolute" top={0} src="/assets/images/backgrounds/dots_circle.jpg"></Image>
-            <Heading zIndex="100" size="xs" letterSpacing={1.8} textAlign="center" color="primary.500" mb={4} textTransform="uppercase">Latest from us</Heading>
-            <Title zIndex="100" fontSize={["44px","64px"]}>Our Blogs <span className="text-gradient">.</span></Title>
-            <Box display={["none", "block"]}pos="relative">
-              <InputGroup mx="auto" mt={8} width={["100%","100%","520px"]}>
-                <InputLeftElement m="6px"><FaSearch size="14px" color="dark.500"/></InputLeftElement>
-                <Input boxShadow="xl" py={6} focusBorderColor="primary.500" pl={12} onChange={handleValue} value={search}  color="dark.500" fontSize="xl" placeholder="Search here..."></Input>
+        <Section  bg={["gray.200", "#ffffff00"]} pt={[4]} pb={0} my={0}>
+            <Box rounded={"2xl"} pb={28} overflow="hidden" px={8} pt={16}>
+            {/* <Image alt="" transform={"rotate(-28deg)"} zIndex="10"  h="400px"  objectFit="cover" right={"0px"} position="absolute" top={0} src="/assets/images/vectors/codbricks.svg"></Image> */}
+            <Heading zIndex="100" size="xs" letterSpacing={1.8} textAlign="left"  mb={2} textTransform="uppercase">Latest from us</Heading>
+            <Title zIndex="100" textAlign="left" fontSize={["32px","64px"]}>Our Blogs <span className="text-gradient">.</span></Title>
+            {/* <Box display={["none", "block"]} pos="relative">
+              <InputGroup mt={8} width={["100%","100%","400px"]}>
+                <InputLeftElement m="1px"><BsSearch size="12px" /></InputLeftElement>
+                <Input borderWidth={1} borderColor="gray.300" rounded={"xl"} py={4} focusBorderColor="primary.500" pl={12} onChange={handleValue} value={search}  color="dark.500" fontSize="lg" placeholder="Search here..."></Input>
               </InputGroup>
-              {search && <Flex pos="absolute" zIndex="600"  mt={4} justifyContent="center" width="100%">
-                  <Box bg="white" width={["100%","100%","520px"]} boxShadow="lg">
+              {search && <Flex pos="absolute" zIndex="600"  mt={4} justifyContent="start" width="100%">
+                  <Box bg="white" rounded={"lg"} width={["100%","100%","400px"]} boxShadow="lg">
                     {data.articles.length > 0 && data.articles.map(blog => (  <Link href="/newsroom/[bid]" as={"/newsroom/" + blog.link}>
-                    <Heading size="md" textAlign="left" className="hover-effect" p={3}>{blog.title}</Heading>
+                    <Heading size="xs" textAlign="left" className="hover-effect" p={3}>{blog.title}</Heading>
                     </Link> ) )}
                   </Box>
               </Flex>}
+            </Box> */}
             </Box>
         </Section>
         {/* CardWithImage have weird width, bad component, pls fix */}
@@ -105,21 +108,21 @@ function Newsroom(){
               </Flex> */}
               <Fade duration={100} distance="5%" bottom>
               <Tabs index={tabIndex} onChange={setTabIndex} align="center">
-                <TabList mb={8} borderBottomWidth={0}>
-                  {["All", "Design", "Technology", "Case Studies"].map(text => <Tab p={5} _selected={{ color: "primary.500", fontWeight:"600", borderBottomColor:"primary.500"}} >{text}</Tab>)}
+                <TabList px={8} mt="-67px" justifyContent={"start"} mb={8} borderBottomWidth={0}>
+                  {["All", "Design", "Technology", "Case Studies"].map(text => <Tab p={5} color="gray.500" _selected={{ color: "dark.500", fontWeight:"600", borderBottomColor:"dark.500", borderBottomWidth: 3}} >{text}</Tab>)}
                 </TabList>
                 <TabPanels>
                   <TabPanel>
                     <Fade duration={300} cascade distance="5%" bottom>
                       <Flex wrap="wrap">
                   {newsroom.map(blog =>
-                    <Box width={["100%","100%","50%","50%","33%"]} px={3} my={3} fontWeight="500">
-                        <Link href="/newsroom/[bid]" as={"/newsroom/" + blog.link}><a>
+                    <Box width={["100%","100%","50%","50%","50%"]} px={3} my={3} fontWeight="500">
+                        <Link href="/blogs/[bid]" as={"/blogs/" + blog.link}><a>
                           <CardWithImage
                           src={blog.image}
                           title={blog.headertitle || blog.title}
                           columns={["128px auto", "auto"]}
-                          height={["96px", "216px"]}
+                          height={["96px", "300px"]}
                           >
                           <Text mt={1} opacity={.7} fontSize={["sm","md"]} overflow="hidden" height={["40px", "auto"]}>{blog.description}</Text>
                           {/* <Flex display={["none","flex"]} mt={4}>
@@ -143,13 +146,13 @@ function Newsroom(){
                   <Fade duration={300} cascade distance="5%" bottom>
                       <Flex wrap="wrap">
                     {newsroom.map(blog =>{if(blog.category === text) {
-                      return <Box width={["100%","100%","50%","50%","33%"]} px={3} my={3} fontWeight="500">
-                        <Link href="/newsroom/[bid]" as={"/newsroom/" + blog.link}><a>
+                      return <Box width={["100%","100%","50%","50%", "50%"]} px={3} my={3} fontWeight="500">
+                        <Link href="/blogs/[bid]" as={"/blogs/" + blog.link}><a>
                           <CardWithImage
                           src={blog.image}
                           title={blog.headertitle || blog.title}
                           columns={["128px auto", "auto"]}
-                          height={["96px", "216px"]}
+                          height={["96px", "300px"]}
                           >
                           <Text mt={1} opacity={.7} fontSize={["sm","md"]} overflow="hidden" height={["40px", "auto"]}>{blog.description}</Text>
                           {/* <Flex display={["none","flex"]} mt={4}>

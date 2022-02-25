@@ -22,50 +22,31 @@ class Contact extends Component {
           <Head>
             <title>Contact us - BG Unified Solutions</title>
           </Head>
-          <Box pos="relative" bg="dark.500">
-            <Image position="absolute" height="100%" zIndex="0" top={0} left={0}  opacity=".3" objectFit="cover" width="100%" src="/assets/images/backgrounds/call_us.jpg"></Image>
-            <Fade distance="5%" duration={500} top>
-                <Section zIndex="100" textAlign="center" color="white" py={[16, 40]} my={0}>
-                  <Title zIndex="100" fontSize={["44px","64px"]}>Contact Us</Title>
-                  <Text zIndex="100" fontSize="xl" mt={2}>Have a doubt? Want to know more? Let's Connect!</Text>
-                </Section>
-            </Fade>
-          </Box>
+        <Section position="relative" textAlign="left" bg={["gray.200", "#ffffff00"]} py={8} mt={24}>
+          <Title textAlign="left" zIndex="100" fontSize={["44px", "64px", "80px"]}>Contact Us <span className="text-gradient">.</span></Title>
+      </Section>
         <Section py={0} my={0}>
-        <Row mt={16} mb={4}>
-              <Flex m={[4,0]} width={["100%","33%","33%"]} align="center" direction={["row","column"]}>
-                <Image alt="" src="/assets/images/vectors/phone.svg" objectFit="contain" size="64px" />
-                <Box mt={3} ml={[6,0]} textAlign={["left","center"]}>
-                  <Text fontWeight="bold">
-                    Call Us
-                  </Text>
-                  <a href="tel::1300002487"><Text fontSize={["sm", "md","md", "lg"]}>1300 00 BGUS</Text></a>
-                </Box>
-              </Flex>
-              <Flex m={[4,0]} width={["100%","33","33%"]} align="center" direction={["row","column"]}>
-                <Image alt="" src="/assets/images/vectors/mail.svg" objectFit="contain" size="64px" />
-                <Box mt={3} ml={[6,0]} textAlign={["left","center"]}>
-                  <Text fontWeight="bold">
-                    Email
-                  </Text>
-                  <a href="mailto::support@bgunifiedsolutions.net"><Text fontSize={["sm", "md","md", "lg"]}>support@bgunifiedsolutions.net</Text></a>
-                </Box>
-              </Flex>
-              <Flex m={[4,0]} width={["100%","33%","33%"]} align="center" direction={["row","column"]}>
-                <Image alt="" src="/assets/images/vectors/247.svg" objectFit="contain" style={{maxWidth: "64px"}} size="64px" />
-                <Box mt={3} ml={[6,0]} textAlign={["left","center"]}>
-                  <Text fontWeight="bold">
-                    Have a chat!
-                  </Text>
-                  <Text fontSize={["sm", "md","md", "lg"]}>Comprehensive Chat Support</Text>
-                </Box>
-              </Flex>
-            </Row> 
+          <Row mt={8} justify="start" mb={4}>
+              <Box width="50%" textAlign="left">
+                <Text fontSize="32px" fontWeight="bold">
+                  Call Us
+                </Text>
+                <a href="tel::1300002487"><Text color="brand.500" fontSize={["sm", "md","md", "4xl"]}>+91 7087362779</Text></a>
+              </Box>
+              <Box width="50%" textAlign="left">
+                <Text fontSize="32px" fontWeight="bold">
+                  Call Us
+                </Text>
+                <a href="tel::1300002487"><Text color="brand.500" fontSize={["sm", "md","md", "4xl"]}>+91 7087362779</Text></a>
+              </Box>
+          </Row> 
         </Section>
-        <Section containerWidth={["100%", "100%", "640px", "720px"]}>
-          <Box bg={["#ffffff00","#ffffff00","#ffffff00","white"]} px={8} py={16}  boxShadow={[0,0,0,"xl"]} textAlign="center" rounded={12}>
-            <Title>Let's Talk!</Title>
-            <Text my={4}>Reach out to us, in case anything comes up.. We'll be glad to connect with you!</Text>
+        <Section>
+          <Box  px={8} py={16} borderTopWidth={2} borderBottomWidth={2}>
+            <Title  textAlign="left" mb={2} fontSize="3xl">Reach out to us, </Title>
+            <Text mb={8} fontSize="20px" color="gray.500" fontWeight="bold">
+              in case anything comes up..
+            </Text>
             <ContactForm />
           </Box>
         </Section>  

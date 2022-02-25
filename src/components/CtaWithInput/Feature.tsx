@@ -6,8 +6,8 @@ export const Feature = (props: StackProps) => {
   const { children, ...stackProps } = props
   return (
     <HStack {...stackProps}>
-      <Box as={HiCheckCircle} color="yellow.400" fontSize="xl" />
-      <Text color="white" fontSize="sm" fontWeight="semibold">
+      <Box as={HiCheckCircle} color="brand.400" fontSize="xl" />
+      <Text fontSize="sm" fontWeight="semibold">
         {children}
       </Text>
     </HStack>

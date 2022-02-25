@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, Heading, Text, useColorModeValue as mode } from '@chakra-ui/react'
+import { Box, Divider, Flex, Grid, Heading, Text, useColorModeValue as mode } from '@chakra-ui/react'
 import * as React from 'react'
 import { BlogCTA } from './BlogCTA'
 import { BlogMedia } from './BlogMedia'
@@ -6,21 +6,24 @@ import { BlogMeta } from './BlogMeta'
 
 export const FeaturedWork = (props) => {
   return (
-      <Box maxW={{ base: 'xl', md: '7xl' }}  mx="auto" p={{ base: '6', md: '8' }}>
+      <Box maxW={{ base: 'xl', md: '7xl' }}  mx="auto" p={{ base: '4', md: '4' }}  >
         <Grid
-          rounded="12" bg={props.color + ".100"}
-          templateColumns={{ base: '1fr', md: props.type === 'horizontal' ? '24rem 1fr' : '1fr' }}
+          templateColumns={{ base: '1fr', md: props.type === 'horizontal' ? '1fr 24rem' : '1fr' }}
           columnGap={{ base: '12', lg: '20' }}
-          rowGap="10"
-          overflow="hidden"
+          rowGap="2" 
         >
          
-          <Flex direction="column" py={16}  pl={{base:6, md:props.type === 'horizontal' ? 16 : 6}} pr={{base:6, md:props.type === 'horizontal' ? 0 : 6}} h="full">
+       
+          <BlogMedia
+            alt={props.title}
+            src={props.img}
+          />
+             <Flex direction="column" py={8}  pl={{base:6, md:props.type === 'horizontal' ? 2 : 6}} pr={{base:6, md:props.type === 'horizontal' ? 0 : 6}} h="full">
             <Box flex="1">
-              <BlogMeta 
+              {/* <BlogMeta 
               color={props.color}
-              type={props.category} tags={props.tags} />
-              <Heading size="xl" mt="6" mb="4">
+              type={props.category} tags={props.tags} /> */}
+              <Heading size="xl" mb="4">
                 {props.title}
               </Heading>
               {/* <Text fontSize="lg" color={mode('gray.600', 'gray.400')} lineHeight="tall">
@@ -29,17 +32,13 @@ export const FeaturedWork = (props) => {
               </Text> */}
             </Box>
             <BlogCTA
-              mt="8"
               color={props.color}
               case_study_link={props.link}
               website_link="www.google.com"
             />
           </Flex>
-          <BlogMedia
-            alt={props.title}
-            src={props.img}
-          />
         </Grid>
+        <Divider mt={props.type === 'horizontal' ? 8 : 0} borderBottomColor={"dark.500"}></Divider>
       </Box>
   )
 }

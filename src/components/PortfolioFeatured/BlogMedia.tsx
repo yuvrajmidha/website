@@ -10,17 +10,16 @@ interface BlogMediaProps extends BoxProps {
 export const BlogMedia = (props: BlogMediaProps) => {
   const { src, alt, ...rest } = props
   return (
-    <Box pos="relative" cursor="pointer" className="group" h="100%" borderRightRadius={12} overflow="hidden" {...rest}>
+    <Box pos="relative" cursor="pointer" className="group" h="100%"  {...rest}>
       <Img
         w="full"
-        h="full"
+        h="448px"
         objectFit="cover"
         htmlWidth="672"
         htmlHeight="448"
-        src={src}
+        src={'https://cdn.dribbble.com/users/8037018/screenshots/17494874/media/aadc327f558cc017890e258ee4233683.jpg'}
         alt={alt}
         transition="all 0.2s"
-        _groupHover={{ transform: 'scale(1.05)' }}
       />
     </Box>
   )

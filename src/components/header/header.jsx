@@ -13,21 +13,28 @@ import {
     Popover,
     PopoverTrigger,
     PopoverContent,
-    Stack, Link, Heading, Grid, Divider, useDisclosure, Tabs, TabList, TabPanels, Tab, TabPanel
+    Stack, Link, Heading, Grid, Divider, useDisclosure, Tabs, TabList, TabPanels, Tab, TabPanel, useColorMode
 } from '@chakra-ui/react'
-import { FaInfoCircle, FaNewspaper, FaCommentAlt, FaBriefcase, FaSearch } from "react-icons/fa"
-import { IoIosCall } from "react-icons/io"
-import newsroom from "../../database/newsroom"
+import { FaSearch } from "react-icons/fa"
 import Fade from 'react-reveal/Fade';
-import Flip from 'react-reveal/Flip';
 import Hyperlink from 'next/link';
 import Router from 'next/router';
 import Container from '../../pageBuilder/Container';
 import CookieNotice from './CookieNotice';
 import Row from '../../pageBuilder/Row';
 import SVG from '../svg/SVG';
-import LoginButton from '../auth/loginbutton';
-import Auth from '../auth/main';
+import Section from '../../pageBuilder/Section';
+
+function ToggleColor() {
+    const { colorMode, toggleColorMode } = useColorMode()
+    return (
+      <header>
+        <Button onClick={toggleColorMode}>
+          Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
+        </Button>
+      </header>
+    )
+  }
 
 function header(props) {
     const initRef = React.useRef();
@@ -44,13 +51,12 @@ function header(props) {
     return (
         <>
 
-            <Box className="headerBox" top="0px" borderBottomColor="gray.400" borderBottomWidth={1} zIndex={1000}>
-                <div className="container-fluid">
-                    <div className="p-3 transition-3 d-flex justify-content-between align-items-center layer-4">
+            <Section className="headerBox" top="0px" borderBottomColor="gray.400" borderBottomWidth={0} my={0} py={0} zIndex={1000}>
+                    <Box className="p-3 transition-3 d-flex justify-content-between align-items-center layer-4">
                         <Box className="d-flex align-items-center" width="30%">
                             <Menu></Menu>
                             <Hyperlink href="/"><a>
-                                <Image alt="" src="/assets/logo.png" height="40px" className="d-none d-sm-block mr-3"></Image>
+                                <Image alt="" src="/logo.svg" height="28px" className="d-none d-sm-block mr-3"></Image>
                             </a></Hyperlink>
 
                             
@@ -236,23 +242,22 @@ function header(props) {
                            
                         </HStack>
                         <Flex width="30%" justifyContent="end">
-                        <Hyperlink href={`/search?search=`}>
-                                <Button p={2} rounded={4} bg="white" onClick={props.toggle}>
+                            <Hyperlink href={`/search?search=`}>
+                                <Button bg="transparent" p={2} rounded={4} onClick={props.toggle}>
                                     <FaSearch size="18px"/>
                                 </Button>
                             </Hyperlink>
                             <Hyperlink href={`/contact`}>
-                                <Button className="mx-3 d-none d-sm-block primary-btn" variant="solid" colorScheme="primary">Start Your Project</Button>
+                                <Button className="mx-3 d-none d-sm-block" variant={"solid"} colorScheme="brand" >Start Your Project</Button>
                             </Hyperlink>
                         </Flex>
                        
-                    </div>
-                </div>
+                    </Box>
 
                 <CookieNotice></CookieNotice>
-            </Box>
+            </Section>
 
-            {show ? <div className="overlay" onClick={overlayClick} /> : ""}
+            {show ? <Box className="overlay" onClick={overlayClick} /> : ""}
         </>
     )
 }
