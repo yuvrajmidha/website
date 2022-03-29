@@ -49,11 +49,11 @@ const FeatureImage = (props) => (
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
           <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
 
-          <title>BG Unified Solutions - IT & Infrastructure, Network, Cyber Security, Collaborative and Professional Services </title>
-          <meta name="description" content="IT solutions and services. Australia's No. 1 IT service provider. Secured infrastructure with telco vendors. Backup and Recovery. Silver-Peak and Cisco. Data Center Locations. Affordable and secure. Load Balancing, DNS and Web Hosting. SD-WAN optimization, managed firewall, proxy, WAF">
+          <title>Codbrix Labs</title>
+          <meta name="description" content="IT solutions and services. We have expertise in CMS and ECommerce Solutions.">
           </meta>
-          <meta property="og:title" content="BG Unified Solutions - IT & Infrastructure, Network, Cyber Security, Collaborative and Professional Services " key="title" />
-          <meta property="og:description" content="IT solutions and services. Australia's No. 1 IT service provider. Secured infrastructure with telco vendors. Backup and Recovery. Silver-Peak and Cisco. Data Center Locations. Affordable and secure. Load Balancing, DNS and Web Hosting. SD-WAN optimization, managed firewall, proxy, WAF" />
+          <meta property="og:title" content="Codbrix Labs" key="title" />
+          <meta property="og:description" content="IT solutions and services. We have expertise in CMS and ECommerce Solutions." />
         </Head>
       <Box pos="relative" as="section" bg={'gray.100'} py="8">
      
@@ -73,36 +73,26 @@ const FeatureImage = (props) => (
         />
         </Flex>
          
-          <Box width={{base: "100%", lg: "50%"}} pt="6">
-            <Box textAlign="center"  fontSize={["56px", "56px", "56px", "72px"]} fontFamily="Sora" lineHeight={1.2} maxWidth="100vw" mt="8" fontWeight="800">
-            I can build <span className="text-gradient">digital experiences</span> for your brand.
+          <Box width={{base: "100%", lg: "50%"}} mx={4} pt="6">
+            <Box textAlign={{base:"left", lg: "center"}}  fontSize={["36px", "56px", "56px", "72px"]} fontFamily="Sora" lineHeight={1.2} maxWidth="100vw" mt="8" fontWeight="800">
+            We can <br className="d-block d-md-none"/> build <span className="text-gradient">digital experiences</span> for your brand.
             </Box>
             {/* <Text mt={5} fontSize="xl">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore ea at non aliquam magnam quis, nihil ratione.
             </Text> */}
-           <ButtonGroup w="100%" justifyContent="center">
+           <ButtonGroup w="100%" justifyContent={{base:"left", lg: "center"}}>
            
            <Button
               mt="8"
-              minW="14rem"
               colorScheme="brand"
-              size="lg"
-              height="14"
-              px="8"
-              fontSize="lg"
               fontWeight="bold"
             >
               Get Started
             </Button>
             <Button
               mt="8"
-              minW="14rem"
               variant="outline"
               colorScheme="blue"
-              size="lg"
-              height="14"
-              px="8"
-              fontSize="lg"
               fontWeight="bold"
             >
               Get Started
@@ -111,7 +101,7 @@ const FeatureImage = (props) => (
           </Box>
         <Box width="25%">
         <Image
-        display={{base: "none", md:"block"}}
+        display={{base: "none", sm:"block"}}
         height="600px"
         minW="464.8px"
           src="assets/images/backgrounds/saas-assets-2.png"
@@ -131,7 +121,7 @@ const FeatureImage = (props) => (
     </Box>
          
     <Section  py="0" >
-      <Box px={{ base: '6', md: '8' }}>
+      <Box px={{ base: '2', md: '8' }}>
           
             <Flex width="100%" justify="space-between" align="end">
               <Box mb={{ lg: '3rem', base: "1rem" }}>
@@ -141,7 +131,7 @@ const FeatureImage = (props) => (
                   letterSpacing="tight"
                   fontWeight="extrabold"
                 >
-                  What I <br/>
+                  What We <br/>
                   <Box as="span">
                     Can Do
                   </Box>&nbsp;
@@ -159,13 +149,13 @@ const FeatureImage = (props) => (
               columns={{ base: 1,md:2, lg: 3 }}
               spacing={{ base: '.4rem', md: '.8rem' }}
             >
-                <Feature title="UI/UX Design" border="red.500" icon={<Image height="80px" src="assets/images/features/vectors/write-3d.png"/>}>
+                <Feature title="UI/UX Design" border="red.500" icon={<Image height={{base:"48px", md:"80px"}} src="assets/images/features/vectors/write-3d.png"/>}>
                 For a User Specific App
               </Feature>
-              <Feature title="Branding" border="blue.500" icon={<Image height="80px" src="assets/images/features/vectors/globe-3d.png"/>}>
+              <Feature title="Branding" border="blue.500" icon={<Image height={{base:"48px", md:"80px"}} src="assets/images/features/vectors/globe-3d.png"/>}>
                 That Defines You!
               </Feature>
-              <Feature title="Development" border="yellow.400" icon={<Image objectFit="contain" width="80px" height="80px" src="assets/images/features/vectors/laptop-3d.png"/>}>
+              <Feature title="Development" border="yellow.400" icon={<Image objectFit="contain" width={{base:"48px", md:"80px"}} height={{base:"48px", md:"80px"}} src="assets/images/features/vectors/laptop-3d.png"/>}>
                 Ready. Steady. Code.
               </Feature>
             </SimpleGrid>
@@ -183,7 +173,7 @@ const FeatureImage = (props) => (
         link=""
         button_caption=""
         button_href=""
-        img=""
+        img="/assets/portfolio/cofounders.jpg"
         type="horizontal"
       ></FeaturedWork>
       <SimpleGrid maxW={{ base: 'xl', md: '7xl' }} mx="auto" columns={{base: 1, lg: 2}}>
@@ -195,7 +185,7 @@ const FeatureImage = (props) => (
         link=""
         button_caption=""
         button_href=""
-        img=""
+        img="/assets/portfolio/cofounders.jpg"
         type="vertical"
       ></FeaturedWork>
       <FeaturedWork
@@ -206,7 +196,7 @@ const FeatureImage = (props) => (
       link=""
       button_caption=""
       button_href=""
-      img=""
+      img="/assets/portfolio/cofounders.jpg"
       type="vertical"
     ></FeaturedWork>
       </SimpleGrid>

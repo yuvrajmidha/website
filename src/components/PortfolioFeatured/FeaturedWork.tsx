@@ -18,12 +18,12 @@ export const FeaturedWork = (props) => {
             alt={props.title}
             src={props.img}
           />
-             <Flex direction="column" py={8}  pl={{base:6, md:props.type === 'horizontal' ? 2 : 6}} pr={{base:6, md:props.type === 'horizontal' ? 0 : 6}} h="full">
+          <Flex direction="column" py={{base: 2, md: 8}}  pl={{base:2, md:props.type === 'horizontal' ? 2 : 6}} pr={{base:6, md:props.type === 'horizontal' ? 0 : 6}} h="full">
             <Box flex="1">
               {/* <BlogMeta 
               color={props.color}
               type={props.category} tags={props.tags} /> */}
-              <Heading size="xl" mb="4">
+              <Heading fontSize={{base:"md",md:"lg", lg:"2xl"}} mb="4">
                 {props.title}
               </Heading>
               {/* <Text fontSize="lg" color={mode('gray.600', 'gray.400')} lineHeight="tall">
@@ -38,7 +38,7 @@ export const FeaturedWork = (props) => {
             />
           </Flex>
         </Grid>
-        <Divider mt={props.type === 'horizontal' ? 8 : 0} borderBottomColor={"dark.500"}></Divider>
+        <Divider mt={props.type === 'horizontal' ? 8 : {base: 8, lg: 0}} borderBottomColor={"dark.500"}></Divider>
       </Box>
   )
 }

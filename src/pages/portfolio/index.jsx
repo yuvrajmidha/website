@@ -52,37 +52,10 @@ function Newsroom() {
 
       <Section position="relative" textAlign="left" bg={["gray.200", "#ffffff00"]} py={[16]} mx="32px" my={0}>
         <Title textAlign="left" zIndex="100" fontSize={["44px", "64px", "80px"]}>Our <br></br>Portfolio <span className="text-gradient">.</span></Title>
-        {/* <Box display={["none", "block"]}pos="relative">
-              <InputGroup mx="auto" mt={8} width={["100%","100%","520px"]}>
-                <InputLeftElement m="6px"><FaSearch size="14px" color="dark.500"/></InputLeftElement>
-                <Input boxShadow="xl" py={6} focusBorderColor="primary.500" pl={12} onChange={handleValue} value={search}  color="dark.500" fontSize="xl" placeholder="Search here..."></Input>
-              </InputGroup>
-              {search && <Flex pos="absolute" zIndex="600"  mt={4} justifyContent="center" width="100%">
-                  <Box bg="white" width={["100%","100%","520px"]} boxShadow="lg">
-                    {data.articles.length > 0 && data.articles.map(blog => (  <Link href="/newsroom/[bid]" as={"/newsroom/" + blog.link}>
-                    <Heading size="md" textAlign="left" className="hover-effect" p={3}>{blog.title}</Heading>
-                    </Link> ) )}
-                  </Box>
-              </Flex>}
-            </Box> */}
+
       </Section>
-      {/* CardWithImage have weird width, bad component, pls fix */}
 
       <Section pt={0} mt={0} >
-        {/* <Flex mx={3} height="80px" justify="center">
-                {["All", "Updates", "Case Study"].map(text => <Button 
-                color="white"
-                variant="unstyled"
-                py={4}
-                mx={4}
-                borderBottomWidth={category === text ? 2 : 0} 
-                ustifyContent="start" 
-                onClick={() => setCategory(text)}>
-                {text}
-                </Button>)}
-              </Flex> */}
-
-
         <SimpleGrid maxW={{ base: 'xl', md: '7xl' }} mx="auto" columns={{ base: 1, lg: 2 }}>
           <Fade duration={300} cascade distance="5%" bottom>
             <FeaturedWork
@@ -93,7 +66,7 @@ function Newsroom() {
               link=""
               button_caption=""
               button_href=""
-              img=""
+              img="/assets/portfolio/cofounders.jpg"
               type="vertical"
             ></FeaturedWork>
           </Fade>
@@ -107,7 +80,7 @@ function Newsroom() {
               link=""
               button_caption=""
               button_href=""
-              img=""
+              img="/assets/portfolio/cofounders.jpg"
               type="vertical"
             ></FeaturedWork>
           </Fade>
