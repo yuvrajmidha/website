@@ -55,14 +55,14 @@ const FeatureImage = (props) => (
           <meta property="og:title" content="Codbrix Labs" key="title" />
           <meta property="og:description" content="IT solutions and services. We have expertise in CMS and ECommerce Solutions." />
         </Head>
-      <Box pos="relative" as="section" bg={'gray.100'} py="8">
+      <Box pos="relative" as="section" bg="gray.100" py={{base: 0, lg: "8"}} pb={16}>
      
         <Flex
         width="100%"
         maxW="1920px"
         mx="auto"
           > 
-        <Flex justify="end" width="25%">
+        <Flex justify="end" pt={16} width="25%">
         <Image
         display={{base: "none", md:"block"}}
         height="500px"
@@ -73,10 +73,10 @@ const FeatureImage = (props) => (
         />
         </Flex>
          
-          <Box width={{base: "100%", lg: "50%"}} mx={4} pt="6">
-            <Box textAlign={{base:"left", lg: "center"}}  fontSize={["36px", "56px", "56px", "72px"]} fontFamily="Sora" lineHeight={1.2} maxWidth="100vw" mt="8" fontWeight="800">
+          <Box width={{base: "100%", lg: "50%"}} mx={4} pt={{base: 0, lg :"20"}}>
+            <Heading textAlign={{base:"left", lg: "center"}}  fontSize={["36px", "56px", "56px", "72px"]} lineHeight={1.2} maxWidth="100vw" mt="8" fontWeight="900">
             We can <br className="d-block d-md-none"/> build <span className="text-gradient">digital experiences</span> for your brand.
-            </Box>
+            </Heading>
             {/* <Text mt={5} fontSize="xl">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore ea at non aliquam magnam quis, nihil ratione.
             </Text> */}
@@ -99,7 +99,7 @@ const FeatureImage = (props) => (
             </Button>
            </ButtonGroup>
           </Box>
-        <Box width="25%">
+        <Box width="25%" pt={8}>
         <Image
         display={{base: "none", sm:"block"}}
         height="600px"
@@ -120,7 +120,7 @@ const FeatureImage = (props) => (
         </Flex>
     </Box>
          
-    <Section  py="0" >
+    <Section  py="20" >
       <Box px={{ base: '2', md: '8' }}>
           
             <Flex width="100%" justify="space-between" align="end">
@@ -129,12 +129,12 @@ const FeatureImage = (props) => (
                   lineHeight="shorter"
                   size="3xl"
                   letterSpacing="tight"
-                  fontWeight="extrabold"
+                  fontWeight={"800"}
                 >
                   What We <br/>
-                  <Box as="span">
+                  <span>
                     Can Do
-                  </Box>&nbsp;
+                  </span>&nbsp;
                   <span className="text-gradient">.</span>
                 </Heading>
                 <Text mt="4" fontSize="lg" fontWeight="600" color={'gray.600'} maxW={{ lg: 'md' }}>
@@ -161,7 +161,7 @@ const FeatureImage = (props) => (
             </SimpleGrid>
       </Box>
     </Section>
-    <Section  py="24" bg="gray.100">
+    <Section id="work"  py="24" bg="white">
     <Box px={4}>
       <Divider mb={2} borderBottomColor={"dark.500"}></Divider>
     </Box>
@@ -169,39 +169,27 @@ const FeatureImage = (props) => (
         color="teal"
         category="Web Dev"
         tags={["React", "SCSS", "NodeJS"]}
-        title="Building a Social App for CoFounders"
-        link=""
-        button_caption=""
-        button_href=""
-        img="/assets/portfolio/cofounders.jpg"
-        type="horizontal"
-      ></FeaturedWork>
-      <SimpleGrid maxW={{ base: 'xl', md: '7xl' }} mx="auto" columns={{base: 1, lg: 2}}>
-      <FeaturedWork
-         color="red"
-        category="Web Dev"
-        tags={["React", "SCSS", "NodeJS"]}
-        title="Building a Social App for CoFounders"
+        title="CoFounders Planet"
         link=""
         button_caption=""
         button_href=""
         img="/assets/portfolio/cofounders.jpg"
         type="vertical"
       ></FeaturedWork>
+      <Divider mt={12} borderBottomColor="dark.500"></Divider>
       <FeaturedWork
-      color="blue"
-      category="Web Dev"
-      tags={["React", "SCSS", "NodeJS"]}
-      title="Building a Social App for CoFounders"
-      link=""
-      button_caption=""
-      button_href=""
-      img="/assets/portfolio/cofounders.jpg"
-      type="vertical"
-    ></FeaturedWork>
-      </SimpleGrid>
+        color="teal"
+        category="Web Dev"
+        tags={["React", "SCSS", "NodeJS"]}
+        title="CoFounders Planet"
+        link=""
+        button_caption=""
+        button_href=""
+        img="/assets/portfolio/cofounders.jpg"
+        type="vertical"
+      ></FeaturedWork>
     </Section>
-    <Section  py="4" bg="gray.100">
+    {/* <Section  py="4" bg="white">
       <Flex width="100%" justify="center" align="end">
               <Box mb={{ lg: '3rem', base: "1rem" }}>
                 <Heading
@@ -219,7 +207,7 @@ const FeatureImage = (props) => (
               </Box>
             </Flex>
       <TestimonialsIndex></TestimonialsIndex>
-    </Section>
+    </Section> */}
     <Section py={4} my={0}>
       <CTAWithInput/>
     </Section>

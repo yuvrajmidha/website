@@ -14,6 +14,11 @@ const theme = extendTheme({
             500: "#4E19B9",
             400: "#4E19B9"
         },
+        primary: {
+            600: "#4E19B9",
+            500: "#4E19B9",
+            400: "#4E19B9"
+        },
         secondary: {
             500: "#EFB617"
         },
@@ -27,22 +32,27 @@ const theme = extendTheme({
         },
     },
     fonts: {
-        heading: "Sora",
-        body: "Nunito Sans Regular",
-        button: "Sora"
+        heading: "Plus Jakarta Sans",
+        body: "Plus Jakarta Sans",
+        button: "Plus Jakarta Sans"
     },
     styles: {
         global: {
             body: {
                 color: "gray.800",
-                bg: "gray.100"
+                bg: "white"
             }
         },
     },
     components: {
         Button: {
             baseStyle:{
-                fontFamily: "Sora",
+                fontFamily: "Plus Jakarta Sans",
+            }
+        },
+        Box : {
+            baseStyle: {
+                fontFamily: "Plus Jakarta Sans"
             }
         },
         Heading: {

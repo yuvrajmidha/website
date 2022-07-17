@@ -22,9 +22,9 @@ class Contact extends Component {
           <Head>
             <title>Contact us - BG Unified Solutions</title>
           </Head>
-        <Section position="relative" textAlign="left" bg={["gray.200", "#ffffff00"]} py={8} mt={24}>
+          <Section position="relative" textAlign="left" bg={["gray.100", "gray.100"]} py={32} mt={0}>
           <Title textAlign="left" zIndex="100" fontSize={["44px", "64px", "80px"]}>Contact Us <span className="text-gradient">.</span></Title>
-      </Section>
+        </Section>
         <Section py={0} my={0}>
           <Row mt={8} justify="start" mb={4}>
               <Box width="50%" textAlign="left">

@@ -39,7 +39,7 @@ export default class MyApp extends App {
       <ChakraProvider theme={customTheme}>
         <Head>
           {/* <script type="text/javascript" src="/assets/js/chatbot.js"></script> */}
-          
+          <link href="https://fonts.googleapis.com/css?family=Rubik"></link>
           <link
             rel="shortcut icon"
             href="/assets/images/icons/favicon/bg.ico"

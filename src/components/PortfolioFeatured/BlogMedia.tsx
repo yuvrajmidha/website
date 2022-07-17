@@ -13,7 +13,6 @@ export const BlogMedia = (props: BlogMediaProps) => {
     <Box width={"100%"} pos="relative" cursor="pointer" className="group" h="100%"  {...rest}>
       <Img
         w="100%"
-        maxH="448px"
         objectFit="cover"
         htmlWidth="672"
         htmlHeight="448"
